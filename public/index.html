@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+
+    <style>
+      .up-and-down {
+        display: none;
+      }
+
+      @media (min-height: 400px) {
+        .up-and-down {
+          display: block;
+          animation: MoveUpDown 700ms ease-in-out infinite;
+          position: fixed;
+          bottom: 0;
+          background: white;
+          margin: 0;
+          padding: 0.5rem;
+        }
+      }
+
+      @keyframes MoveUpDown {
+        0%,
+        100% {
+          bottom: 0;
+        }
+        50% {
+          bottom: 10vh;
+        }
+      }
+    </style>
+  </head>
+
+  <body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    <fieldset id="renderModes">
+      <legend>RENDER MODE</legend>
+      <table border="1" cellspacing="0" cellpadding="5">
+        <tr>
+          <th>MODE</th>
+          <th>START</th>
+          <th>REACT VERSION</th>
+        </tr>
+        <tr>
+          <td>new</td>
+          <td>
+            <button id="new"><code>ReactDOM.createRoot</code></button>
+          </td>
+          <td align="center">18</td>
+        </tr>
+        <tr>
+          <td>old</td>
+          <td>
+            <button id="old"><code>ReactDOM.render</code></button>
+          </td>
+          <td align="center">up to 17</td>
+        </tr>
+      </table>
+    </fieldset>
+
+    <fieldset style="margin-top: 1rem;">
+      <legend>APP</legend>
+      <div id="root">Press one of the buttons above 👆</div>
+    </fieldset>
+
+    <p style="font-variant: small-caps;">
+      console legend:
+      <span style="background: red; color: white; padding: 2px 7px 5px;"
+        >macrotask</span
+      >
+      |
+      <span style="background: blue; color: white; padding: 2px 7px 5px;"
+        >microtask</span
+      >
+    </p>
+
+    <h4 class="up-and-down">
+      👇 open the console below
+    </h4>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>
