@@ -113,7 +113,7 @@ function App() {
 
     fetchSomething().then(() => {
       performance.mark("stateUpdate.start");
-      micro("before state update");
+      micro("before setState");
 
       updatingState = true;
 
@@ -131,7 +131,7 @@ function App() {
         // React 18 will only re-render once at the end (that's batching!)
       }
 
-      micro("after state update");
+      micro("after setState");
       performance.mark("stateUpdate.end");
 
       performance.measure(
